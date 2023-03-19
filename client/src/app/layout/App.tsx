@@ -1,11 +1,13 @@
 import { ThemeProvider } from "@emotion/react";
 import { Container, createTheme, CssBaseline } from "@mui/material";
 import { useState } from "react";
-import Catalog from "../../features/catalog/Catalog";
 import Header from "./Header";
+import { Outlet } from "react-router-dom";
 
 
 function App() {
+
+
   const [darkMode, setDarkMode] = useState(false);
   const paletteType = darkMode ? 'dark' : 'light';
   const theme = createTheme({
@@ -17,20 +19,21 @@ function App() {
     }
   })
 
+
 function handleThemeChange(){
   setDarkMode(!darkMode);
 }
 
-  return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Header darkMode={darkMode} handleThemeChange={handleThemeChange}/>
-      {/* saljes dve stvari, dve ce Catalog da prihvati */}
+
+return (
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
+    <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
       <Container>
-        <Catalog />
+        <Outlet />
       </Container>
-    </ThemeProvider>
-    );
-  }
+  </ThemeProvider>
+ );
+}
 
 export default App;
