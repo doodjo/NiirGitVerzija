@@ -24,14 +24,14 @@ export default function ProductCard({product}: Props) {
     />
 
       <CardMedia
-        sx={{ height: 140, backgroundSize: 'contain', bgcolor: 'primary.light' }}
+        sx={{ height: 140, backgroundSize: 'contain', bgcolor: '#FFFFFFF' }}
         image={product.pictureUrl}
         title={product.name}
       />
 
       <CardContent>
         <Typography gutterBottom color='secondary' variant="h5">
-          ${(product.price / 100).toFixed(2)}
+          {(product.price)} RSD
         </Typography>
 
         <Typography variant="body2" color="text.secondary">

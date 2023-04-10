@@ -11,7 +11,21 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
   const paletteType = darkMode ? 'dark' : 'light';
   const theme = createTheme({
+    
     palette: {
+
+      primary: {
+        light: '#b71c1c',
+        main: '#f44336',
+        dark: '#971243',
+        contrastText: '#fff',
+      },
+      secondary: {
+        light: '#ff7961',
+        main: '#f44336',
+        dark: '#f44336',
+        contrastText: '#000',
+      },
       mode: paletteType,
       background: {
         default: paletteType=== 'light' ? '#eaeaea' : '#121212'
