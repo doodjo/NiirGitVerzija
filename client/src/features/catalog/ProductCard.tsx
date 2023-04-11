@@ -31,7 +31,7 @@ export default function ProductCard({product}: Props) {
 
       <CardContent>
         <Typography gutterBottom color='secondary' variant="h5">
-          {(product.price)} RSD
+          {(product.price)},99 RSD
         </Typography>
 
         <Typography variant="body2" color="text.secondary">
@@ -41,7 +41,7 @@ export default function ProductCard({product}: Props) {
 
 
       <CardActions>
-        <Button size="small">Add to cart</Button>
+        <Button size="small">Add to</Button>
         <Button component={Link} to={`/catalog/${product.id}`} size="small">View</Button>
       </CardActions>
   </Card>

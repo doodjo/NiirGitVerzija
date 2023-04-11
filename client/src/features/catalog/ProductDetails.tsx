@@ -33,28 +33,28 @@ export default function ProductDetails() {
             <Grid item xs={6}>
                 <Typography variant='h3'>{product.name}</Typography>
                 <Divider sx={{mb:2}}/>
-                <Typography variant='h4' color='secondary'>{(product.price / 100).toFixed(2)}$</Typography>
+                <Typography variant='h4' color='secondary'>{(product.price).toFixed(0)},99 RSD</Typography>
                 <TableContainer>
                     <Table>
                         <TableBody>
                             <TableRow>
-                                <TableCell>Name</TableCell>
+                                <TableCell>Naziv</TableCell>
                                 <TableCell>{product.name}</TableCell>
                             </TableRow>
                             <TableRow>
-                                <TableCell>Description</TableCell>
+                                <TableCell>Opis proizvoda</TableCell>
                                 <TableCell>{product.description}</TableCell>
                             </TableRow>
                             <TableRow>
-                                <TableCell>Type</TableCell>
+                                <TableCell>Tip</TableCell>
                                 <TableCell>{product.type}</TableCell>
                             </TableRow>
                             <TableRow>
-                                <TableCell>Brand</TableCell>
+                                <TableCell>Brend</TableCell>
                                 <TableCell>{product.brand}</TableCell>
                             </TableRow>
                             <TableRow>
-                                <TableCell>Quantity in stock</TableCell>
+                                <TableCell>Količina u magacinu</TableCell>
                                 <TableCell>{product.quantityInStock}</TableCell>
                             </TableRow>
                         </TableBody>

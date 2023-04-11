@@ -13,8 +13,7 @@ import LiquorOutlinedIcon from '@mui/icons-material/LiquorOutlined';
 import SanitizerOutlinedIcon from '@mui/icons-material/SanitizerOutlined';
 import CleaningServicesOutlinedIcon from '@mui/icons-material/CleaningServicesOutlined';
 import BreakfastDiningOutlinedIcon from '@mui/icons-material/BreakfastDiningOutlined';
-
-
+import './logoTxt.css';
 const midlinks = [
     {title: 'catalog', path: '/catalog'},
     {title: 'about', path: '/about'},
@@ -38,6 +37,12 @@ const navStyles = {
             color: 'primary.light'
         }
 }
+
+const navStylesLogo = {
+    color: '#FFFFFF', 
+    textDecoration: 'none',
+    typography: 'h5',
+};
 
 const StyledLink = styled(NavLink)(({ theme }) => ({
     color: theme.palette.text.primary,
@@ -69,17 +74,22 @@ export default function Header({darkMode, handleThemeChange}: Props) {
             <Toolbar sx={{display:'flex', justifyContent: 'space-between'}}>
 
                 <Box display='flex' alignItems='center'>
-                    <Typography variant='h5' component={NavLink} 
-                        to='/'
-                        sx={navStyles} > 
-                        <Box
+                    <Typography 
+                    variant='h6' 
+                    component={NavLink} 
+                    to='/'
+                    sx={navStylesLogo} > 
+                        <div className="logoTxt" style={{ fontFamily: 'Eurostile' }}>
+                            NIIR
+                        </div>
+                        {/* <Box
                         component="img"
                         sx = {{ height: 55 }}
                         display = 'flex'
                         align-items = "center"
                         alt = "Niir"
                         src = { logo }
-                        /> 
+                        />  */}
                     </Typography>
                     <Switch checked={darkMode} onChange={handleThemeChange}/> 
                 </Box>
@@ -108,59 +118,77 @@ export default function Header({darkMode, handleThemeChange}: Props) {
                                 open={openMenu}
                                 onClose={handleClose}
                                 >
-                                    <MenuItem onClick={() => setAnchorEl(null)}sx={{display: 'flex', alignItems:'center', justifyContent:'space-evenly'}} >
+                                    <MenuItem onClick={() => setAnchorEl(null)} >
+                                        <Box sx={{display: 'flex', alignItems:'normal', gap:2}}>
                                     <BreakfastDiningOutlinedIcon />
-                                    <StyledLink to="/Namirnice">
+                                    <StyledLink to="/namirnice">
                                         Namirnice</StyledLink>
+                                        </Box>
                                     </MenuItem>
 
-                                    <MenuItem onClick={() => setAnchorEl(null)}sx={{display: 'flex', alignItems:'center', justifyContent:'space-evenly'}} >
+                                    <MenuItem onClick={() => setAnchorEl(null)} >
+                                        <Box sx={{display: 'flex', alignItems:'normal', gap:2}}>
                                     <EggOutlinedIcon />
-                                    <StyledLink to="/catalog">
+                                    <StyledLink to="/mlečniProizvodi">
                                         Mlečni Proizvodi</StyledLink>
+                                        </Box>
                                     </MenuItem>
                                     
-                                    <MenuItem onClick={() => setAnchorEl(null)}sx={{display: 'flex', alignItems:'center', justifyContent:'space-evenly'}} >
+                                    <MenuItem onClick={() => setAnchorEl(null)} >
+                                        <Box sx={{display: 'flex', alignItems:'normal', gap:2}}>
                                     <SettingsInputSvideoOutlinedIcon />
-                                    <StyledLink to="/catalog">
+                                    <StyledLink to="/voćePovrće">
                                         Voće i Povrće</StyledLink>
+                                        </Box>
                                     </MenuItem>
                                     
-                                    <MenuItem onClick={() => setAnchorEl(null)}sx={{display: 'flex', alignItems:'center', justifyContent:'space-evenly'}} >
+                                    <MenuItem onClick={() => setAnchorEl(null)} >
+                                        <Box sx={{display: 'flex', alignItems:'normal', gap:2}}>
                                     <KebabDiningOutlinedIcon />
-                                    <StyledLink to="/catalog">
+                                    <StyledLink to="/meso">
                                         Meso</StyledLink>
+                                        </Box>
                                     </MenuItem>
                                     
-                                    <MenuItem onClick={() => setAnchorEl(null)}sx={{display: 'flex', alignItems:'center', justifyContent:'space-evenly'}} >
+                                    <MenuItem onClick={() => setAnchorEl(null)} >
+                                        <Box sx={{display: 'flex', alignItems:'normal', gap:2}}>
                                     <LiquorOutlinedIcon />
-                                    <StyledLink to="/catalog">
+                                    <StyledLink to="/pica">
                                         Pića</StyledLink>
+                                        </Box>
                                     </MenuItem>
                                     
-                                    <MenuItem onClick={() => setAnchorEl(null)}sx={{display: 'flex', alignItems:'center', justifyContent:'space-evenly'}} >
+                                    <MenuItem onClick={() => setAnchorEl(null)} >
+                                        <Box sx={{display: 'flex', alignItems:'normal', gap:2}}>
                                     <CookieOutlinedIcon />
-                                    <StyledLink to="/catalog">
+                                    <StyledLink to="/slatkisi">
                                         Slatkiši i grickalice</StyledLink>
+                                        </Box>
                                     </MenuItem>
 
-                                    <MenuItem onClick={() => setAnchorEl(null)} sx={{display: 'flex', alignItems:'center', justifyContent:'space-evenly'}} >
+                                    <MenuItem onClick={() => setAnchorEl(null)} >
+                                        <Box sx={{display: 'flex', alignItems:'normal', gap:2}}>
                                     <SanitizerOutlinedIcon />
-                                    <StyledLink to="/catalog">
+                                    <StyledLink to="/ličnaHigijena">
                                         Lična higijena</StyledLink>
+                                        </Box>
                                     </MenuItem>
 
-                                    <MenuItem onClick={() => setAnchorEl(null)} sx={{display: 'flex', alignItems:'center', justifyContent:'space-evenly'}} >
+                                    <MenuItem onClick={() => setAnchorEl(null)} >
+                                        <Box sx={{display: 'flex', alignItems:'normal', gap:2}}>
                                     <CleaningServicesOutlinedIcon />
-                                    <StyledLink to="/catalog">
+                                    <StyledLink to="/kućnaHemija">
                                         Kućna hemija</StyledLink>
+                                        </Box>
                                     </MenuItem>
 
-                                    <MenuItem onClick={() => setAnchorEl(null)} sx={{display: 'flex', alignItems:'center', justifyContent:'space-evenly'}} >
+                                    <MenuItem onClick={() => setAnchorEl(null)} >
+                                        <Box sx={{display: 'flex', alignItems:'normal', gap:2}}>
                                     <ChildCareOutlinedIcon />
-                                    <StyledLink to="/catalog"> 
+                                    <StyledLink to="/bebe"> 
                                         Bebe
                                     </StyledLink>
+                                        </Box>
                                     </MenuItem>
 
                                 </Menu>
